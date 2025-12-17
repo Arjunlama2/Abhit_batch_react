@@ -1,5 +1,7 @@
 import React from 'react'
-import "./header.css"
+import { CiMenuBurger } from "react-icons/ci";
+
+import { Link } from 'react-router'
 const navilinks = [{
     name: "home",
     link: "/"
@@ -18,25 +20,30 @@ const navilinks = [{
 function Header() {
     return (
         <header>
-            <div className='upper-header'>
+            <div className='flex justify-between mx-4'>
                 <div>contanct</div>
                 <div>social media</div>
 
             </div>
-            <div className='nav-container'>
-                <div>log</div>
-                <nav>
-                    <ul className='nav-links'>
+            <div className='mx-4 flex justify-between bg-[#046e3c] '>
+                <div>logo</div>
+                <nav className='hidden md:block'>
+                    <ul className='flex gap-5' >
                         {
                             navilinks.map((el, index) => {
-                                return <li key={index}> <a href={el.link}>{el.name}</a> </li>
+                                return <li key={index}> <Link to={el.link} >{el.name}</Link> </li>
                             })
                         }
                     </ul>
                 </nav>
-                <div>
+                <div className='hidden md:block' >
                     search
                 </div>
+            </div>
+
+
+            <div className='fixed right-8 top-7 md:hidden '>
+                <CiMenuBurger className='text-white text-[18px] ' />
             </div>
         </header>
     )
