@@ -20,12 +20,12 @@ const navilinks = [{
 function Header() {
     return (
         <header>
-            <div className='flex justify-between mx-4'>
+            <div className='container flex justify-between '>
                 <div>contanct</div>
                 <div>social media</div>
 
             </div>
-            <div className='mx-4 flex justify-between bg-[#046e3c] '>
+            <div className='container flex justify-between bg-[#046e3c] '>
                 <div>logo</div>
                 <nav className='hidden md:block'>
                     <ul className='flex gap-5' >
