@@ -1,10 +1,11 @@
 import React from "react";
 
-function AboutSection({ data }) {
+function AboutSection(props) {
+  const {data}=props
   return (
     <div className="flex gap-6 justify-around flex-wrap">
-      {data.map((el, index) => (
-        <div
+      {data.map((el, index) =>{
+       return  <div
           key={index}
           className="relative w-36 h-52 bg-cover bg-center rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
           style={{ backgroundImage: `url(${el.image})` }}
@@ -17,7 +18,8 @@ function AboutSection({ data }) {
             <p className="text-xs ">{el.decription}</p>
           </div>
         </div>
-      ))}
+      }
+      )}
     </div>
   );
 }

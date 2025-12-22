@@ -30,7 +30,7 @@ function Home() {
    < >
   
    <div className='container '>
-  <Hero data={herodata} isclose={false} />
+  <Hero data={herodata} />
   <AboutSection data={aboutdata}/>
    </div>
 
