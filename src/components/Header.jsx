@@ -33,7 +33,7 @@ function Header() {
                     <div >logo</div>
                     <nav className='hidden md:block'>
                         <ul className='flex gap-5' >
-                            {
+                            { navilinks &&
                                 navilinks.map((el, index) => {
                                     return <li key={index}> <Link to={el.link} >{el.name}</Link> </li>
                                 })
@@ -75,7 +75,7 @@ function Header() {
                         }}>
                     <div>
 
-                        {
+                        { navilinks &&
                             navilinks.map((el, index) => {
 
                                 return <li key={index}> <Link to={el.link} >{el.name}</Link> </li>
