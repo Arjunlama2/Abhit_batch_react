@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { forwardRef, useState } from 'react'
 import { RxCross1 } from "react-icons/rx";
 
 import { CiMenuBurger } from "react-icons/ci";
@@ -18,12 +18,12 @@ const navilinks = [{
     link: "/contact"
 }]
 
-
-function Header() {
-    const [isToggled, setIsToggled] = useState(false)
-    return (
+const Header = forwardRef(({headerRef})=>{
+    console.log('this is header ref',headerRef)
+    const [isToggled,setIsToggled]=useState()
+      return (
         <>
-            <header>
+            <header ref={headerRef}>
                 <div className='container flex justify-between '>
                     <div>contanct</div>
                     <div>social media</div>
@@ -68,7 +68,7 @@ function Header() {
             </header>
             <div className={`${!isToggled ? "hidden" : ""}fixed z-9 top-12 h-full w-full bg-black/70`} onClick={() => setIsToggled(!isToggled)}>
                 <div className={`fixed top-12 h-screen bg-red-600 w-1/2 right-0 z-20 md:hidden 
- ${!isToggled ? 'translate-x-80 transition-transform ease-in-out duration-1000' :
+ ${!isToggled ? 'translate-x-100 transition-transform ease-in-out duration-1000' :
                         'transition-transform ease-in-out duration-1000'}`} onClick={(e) => {
                             e.preventDefault()
                             e.stopPropagation()
@@ -93,4 +93,9 @@ function Header() {
     )
 }
 
+
+)
+
+
+    
 export default Header

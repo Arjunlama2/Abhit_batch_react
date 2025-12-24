@@ -1,13 +1,10 @@
 import React from 'react'
 
-function Hero(props) {
-const {data}=props
+function Hero() {
+
   return (
     <div className=''>
-      {
-        data.title
-      }
-
+   
       <input type="date" name="" id="" />
     </div>
   )

@@ -2,10 +2,10 @@ import React from 'react'
 import Header from '../components/Header'
 import { Outlet } from 'react-router'
 
-function PageLayout() {
+function PageLayout({headerRef}) {
   return (
     <>
-       <Header/>
+       <Header headerRef={headerRef}/>
        <Outlet/>
     </>
 
