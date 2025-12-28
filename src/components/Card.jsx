@@ -20,7 +20,12 @@ function Card({ data }) {
 
         </div>
         <div>
-          <button className="bg-green-400 hidden absolute  top-[220px] right-14 z-5 group-hover:block px-12  py-2 text-2xl rounded-[5px] ">View</button>
+          <button className="bg-green-400 hidden absolute  top-[220px] 
+          right-14 z-5 group-hover:block px-12  py-2 text-2xl rounded-[5px] cursor-pointer
+          " onClick={(e)=>{
+            e.stopPropagation()
+            navigate(`/${data.id}`)
+          }}>View</button>
         </div>
 
 
